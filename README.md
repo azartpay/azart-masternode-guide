@@ -165,7 +165,6 @@ Now you have to create azartd Service:
 
 ```
 nano /etc/systemd/system/azartd.service
-
 ```
 
 With following info:
