@@ -187,11 +187,7 @@ WantedBy=multi-user.target
 CTRL X to save it. Y for yes, then ENTER.
 
 ```
-systemctl enable azartd
-```
-
-```
-systemctl start azartd
+systemctl enable azartd && systemctl start azartd
 ```
 
 #### Installing Sentinel
