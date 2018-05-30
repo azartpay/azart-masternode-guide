@@ -86,18 +86,6 @@ Depending on your local machine, you will need to use different steps:
 Copy and paste these commands into your VPS and hit enter. Remember that one box at a time:
 
 ```
-
-```
-
-### Secure your VPS
-
-Install Fail2ban:
-
-```
-
-```
-
-```
 apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get -y install \
     software-properties-common \
     fail2ban \
