@@ -122,8 +122,8 @@ cd /opt \
     && wget https://github.com/azartpay/azart/releases/download/0.12.3.3/azart-0.12.3.3-linux-x64.tgz \
     && tar -xvf azart-0.12.3.3-linux-x64.tgz \
     && rm azart-0.12.3.3-linux-x64.tgz \
-    cp azart-0.12.3.3-linux-x64/azart{d,-cli} /usr/local/bin \
-    chmod -R 7777 /usr/local/bin/azart*
+    && cp azart-0.12.3.3-linux-x64/azart{d,-cli} /usr/local/bin \
+    && chmod -R 7777 /usr/local/bin/azart*
 ```
 
 ```
@@ -194,7 +194,8 @@ systemctl enable azartd && systemctl start azartd
 #### Installing Sentinel
 
 ```
-cd /opt && git clone https://github.com/azartpay/azart-sentinel azart-sentinel \
+cd /opt \
+    && git clone https://github.com/azartpay/azart-sentinel azart-sentinel \
     && cd azart-sentinel \
     && virtualenv ./venv \
     && ./venv/bin/pip install -r requirements.txt \
