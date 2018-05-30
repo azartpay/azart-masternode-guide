@@ -110,6 +110,7 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get -y
     libevent-dev \
     bsdmainutils \
     libzmq3-dev \
+    python-virtualenv \
     nano \
     && apt-add-repository -y ppa:bitcoin/bitcoin \
     && apt-get -y update \
