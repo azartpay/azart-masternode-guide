@@ -5,7 +5,7 @@ In this guide you will learn how to prepare a Azart Masternode in Ubuntu version
 This guide was done with the following environment:
 * Local: Windows 8.1 64 bit
 * Remote: Ubuntu 16.04 64 bit (fresh Ubuntu server without Azart already installed)
-* Azart Version: 0.12.3.2
+* Azart Version: 0.12.3.3
 
 ## Initial requirements
 
@@ -117,10 +117,10 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get -y
 ```
 
 ```
-wget https://github.com/azartpay/azart/releases/download/0.12.3.2/azart-0.12.3.2-linux-x64.tgz \
-    && tar -xvf azart-0.12.3.2-linux-x64.tgz \
-    && rm azart-0.12.3.2-linux-x64.tgz \
-    cp azart-0.12.3.2-linux-x64/azart{d,-cli} /usr/local/bin \
+wget https://github.com/azartpay/azart/releases/download/0.12.3.3/azart-0.12.3.3-linux-x64.tgz \
+    && tar -xvf azart-0.12.3.3-linux-x64.tgz \
+    && rm azart-0.12.3.3-linux-x64.tgz \
+    cp azart-0.12.3.3-linux-x64/azart{d,-cli} /usr/local/bin \
     chmod -R 7777 /usr/local/bin/azart*
 ```
 
