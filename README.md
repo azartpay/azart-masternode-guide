@@ -86,11 +86,7 @@ Depending on your local machine, you will need to use different steps:
 Copy and paste these commands into your VPS and hit enter. Remember that one box at a time:
 
 ```
-apt-get -y update
-```
 
-```
-apt-get -y upgrade
 ```
 
 ### Secure your VPS
@@ -98,29 +94,13 @@ apt-get -y upgrade
 Install Fail2ban:
 
 ```
-apt-get -y install fail2ban
+
 ```
 
 ```
-service fail2ban restart
-```
-
-### Install dependencies and Azart Daemon
-
-```
-apt-get -y install software-properties-common
-```
-
-```
-apt-add-repository -y ppa:bitcoin/bitcoin
-```
-
-```
-apt-get -y update
-```
-
-```
-apt-get -y install \
+apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get -y install \
+    software-properties-common \
+    fail2ban \
     wget \
     git \
     unzip \
@@ -142,24 +122,10 @@ apt-get -y install \
     libevent-dev \
     bsdmainutils \
     libzmq3-dev \
-    nano
-```
-
-```
-apt-get -y update
-```
-
-```
-apt-get -y upgrade
-```
-
-```
-apt-get -y install libdb4.8-dev
-```
-
-```
-apt-get -y install libdb4.8++-dev
-```
+    nano \
+    && apt-add-repository -y ppa:bitcoin/bitcoin \
+    && apt-get -y update \
+    && apt-get -y install libdb4.8-dev libdb4.8++-dev
 
 ```
 wget https://github.com/azartpay/azart/releases/download/0.12.3.2/azart-0.12.3.2-linux-x64.tgz
@@ -174,17 +140,11 @@ rm azart-0.12.3.2-linux-x64.tgz
 ```
 
 ```
-cp azart-0.12.3.2/azart{d,-cli} /usr/local/bin
-```
-```
-cd
-```
-```
-mkdir -p .azartcore
+cp azart-0.12.3.2-linux-x64/azart{d,-cli} /usr/local/bin
 ```
 
 ```
-nano .azartcore/azart.conf
+cd /root && mkdir -p .azartcore && nano .azartcore/azart.conf
 ```
 
 Replace:
@@ -256,37 +216,17 @@ systemctl start azartd
 #### Installing Sentinel
 
 ```
-apt-get -y install virtualenv python-pip
-```
-
-```
-git clone https://github.com/azartpay/azart-sentinel /sentinel
-```
-
-```
-cd /sentinel
-```
-
-```
-virtualenv venv
-```
-
-```
-. venv/bin/activate
-```
-
-```
-pip install -r requirements.txt
-```
-
-```
-crontab -e
+cd /opt && git clone https://github.com/azartpay/azart-sentinel azart-sentinel \
+    cd azart-sentinel \
+    virtualenv ./venv \
+    ./venv/bin/pip install -r requirements.txt \
+    crontab -e
 ```
 
 Hit 2. This will bring up an editor. Paste the following in it at the bottom.
 
 ```
-* * * * * cd /sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1
+* * * * * cd /opt/azart-sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1
 ```
 
 CTRL X to save it. Y for yes, then ENTER.
