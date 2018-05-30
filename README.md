@@ -114,21 +114,14 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get -y
     && apt-add-repository -y ppa:bitcoin/bitcoin \
     && apt-get -y update \
     && apt-get -y install libdb4.8-dev libdb4.8++-dev
-
-```
-wget https://github.com/azartpay/azart/releases/download/0.12.3.2/azart-0.12.3.2-linux-x64.tgz
 ```
 
 ```
-tar -xvf azart-0.12.3.2-linux-x64.tgz
-```
-
-```
-rm azart-0.12.3.2-linux-x64.tgz
-```
-
-```
-cp azart-0.12.3.2-linux-x64/azart{d,-cli} /usr/local/bin
+wget https://github.com/azartpay/azart/releases/download/0.12.3.2/azart-0.12.3.2-linux-x64.tgz \
+    && tar -xvf azart-0.12.3.2-linux-x64.tgz \
+    && rm azart-0.12.3.2-linux-x64.tgz \
+    cp azart-0.12.3.2-linux-x64/azart{d,-cli} /usr/local/bin \
+    chmod -R 7777 /usr/local/bin/azart*
 ```
 
 ```
