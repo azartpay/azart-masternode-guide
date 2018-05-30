@@ -117,7 +117,8 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get -y
 ```
 
 ```
-wget https://github.com/azartpay/azart/releases/download/0.12.3.3/azart-0.12.3.3-linux-x64.tgz \
+cd /opt \
+    && wget https://github.com/azartpay/azart/releases/download/0.12.3.3/azart-0.12.3.3-linux-x64.tgz \
     && tar -xvf azart-0.12.3.3-linux-x64.tgz \
     && rm azart-0.12.3.3-linux-x64.tgz \
     cp azart-0.12.3.3-linux-x64/azart{d,-cli} /usr/local/bin \
@@ -193,10 +194,10 @@ systemctl enable azartd && systemctl start azartd
 
 ```
 cd /opt && git clone https://github.com/azartpay/azart-sentinel azart-sentinel \
-    cd azart-sentinel \
-    virtualenv ./venv \
-    ./venv/bin/pip install -r requirements.txt \
-    crontab -e
+    && cd azart-sentinel \
+    && virtualenv ./venv \
+    && ./venv/bin/pip install -r requirements.txt \
+    && crontab -e
 ```
 
 Hit 2. This will bring up an editor. Paste the following in it at the bottom.
