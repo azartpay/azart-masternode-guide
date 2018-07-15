@@ -5,7 +5,7 @@ In this guide you will learn how to prepare a Azart Masternode in Ubuntu version
 This guide was done with the following environment:
 * Local: Windows 8.1 64 bit
 * Remote: Ubuntu 16.04 64 bit (fresh Ubuntu server without Azart already installed)
-* Azart Version: 0.12.3.3
+* Azart Version: 0.12.3.4
 
 ## Initial requirements
 
