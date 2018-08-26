@@ -52,7 +52,7 @@ The options that you have to select are the following:
 
 In the image you will see the two options that you will have to select.
 
-![Options on Wallet Settings to select](https://github.com/azartpay/azart-masternode-guide/blob/master/azartwalletsettings.png "Wallet Settings")
+![Options on Wallet Settings to select](https://github.com/azartpay/azart-masternode-guide/blob/master/azartcore_settings.png "Wallet Settings")
 
 Press "OK" button. In order to enable the new options, you have to restart Azart Core wallet.
 
