@@ -22,7 +22,7 @@ The recommended requirements for the master node would be the following:
 
 ### Azart Transaction
 
-In order to have a Azart masternode you must have a transaction of 1,000 AZART in your desktop Cold Wallet.
+In order to have a Azart masternode you must have a transaction of 10,000 AZART in your desktop Cold Wallet.
 
 To carry this out you need to open your Azart Core wallet.
 
@@ -32,11 +32,11 @@ Click on the "New" button and write a label for your new address (for example, "
 
 Right click on the address you just created and click on "Copy Address" and click on the "Close" button.
 
-Now that you have the address created, you will send 1,000 AZART to your address. With this, you will have a transaction of 1,000 AZART in your wallet.
+Now that you have the address created, you will send 10,000 AZART to your address. With this, you will have a transaction of 10,000 AZART in your wallet.
 
 Click on the "Send" tab and on "Pay To", enter the address you just created. You will see that in "Label" the name that you put before will appear.
 
-Then you must enter the value of "1000" in "Amount" and you must NOT select "Substract fee from amount". Finally, you must click on the "Send" button.
+Then you must enter the value of "10000" in "Amount" and you must NOT select "Substract fee from amount". Finally, you must click on the "Send" button.
 
 In the "Overview" tab, a "Payment to yourself" will appear. This transaction must be confirmed by the network, so you will have to wait for it to be confirmed (it may take five minutes of waiting depending on the state of the network and the commission chosen).
 
@@ -119,10 +119,10 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get -y
 
 ```
 cd /opt \
-    && wget https://github.com/azartpay/azart/releases/download/0.12.3.4/azart-0.12.3.4-linux-x64.tgz \
-    && tar -xvf azart-0.12.3.4-linux-x64.tgz \
-    && rm azart-0.12.3.4-linux-x64.tgz \
-    && cp azart-0.12.3.4-linux-x64/azart{d,-cli} /usr/local/bin \
+    && wget https://github.com/azartpay/azart/releases/download/0.12.4.1/azart-0.12.4.1-linux-x64.tgz \
+    && tar -xvf azart-0.12.4.1-linux-x64.tgz \
+    && rm azart-0.12.4.1-linux-x64.tgz \
+    && cp azart-0.12.4.1-linux-x64/azart{d,-cli} /usr/local/bin \
     && chmod -R 7777 /usr/local/bin/azart*
 ```
 
@@ -140,22 +140,34 @@ masternodeprivkey=WALLET_GENKEY
 With your info!
 
 ```
-rpcuser=randuser43897ty8943
-rpcpassword=passhf95uiygr5308h08r3h0249fbgh7389h973
-rpcallowip=127.0.0.1
 listen=1
 server=1
 daemon=1
+masternode=1
+masternodeprivkey=PRIVATKEY
 logtimestamps=1
 maxconnections=256
-externalip=VPS_IP_ADDRESS
-masternodeprivkey=WALLET_GENKEY
-masternode=1
-addnode=5.9.6.17:9799
-addnode=5.9.73.81:9799
-addnode=176.9.121.219:9799
+externalip=VPSIPADDRESS
+rpcuser=RPCUSER
+rpcpassword=RPCPASSWORD
+rpcallowip=127.0.0.1
 addnode=176.9.70.106:9799
-addnode=80.87.197.195:9799
+addnode=5.9.73.81:9799
+addnode=5.9.6.17:9799
+addnode=176.9.121.219:9799
+addnode=5.188.204.38:9799
+addnode=5.188.204.37:9799
+addnode=5.188.204.36:9799
+addnode=5.188.204.35:9799
+addnode=5.188.204.34:9799
+addnode=5.188.204.33:9799
+addnode=5.188.204.32:9799
+addnode=5.188.204.31:9799
+addnode=5.188.204.30:9799
+addnode=5.188.204.29:9799
+addnode=5.188.204.28:9799
+addnode=5.188.204.27:9799
+addnode=5.188.204.6:9799
 ```
 
 CTRL X to save it. Y for yes, then ENTER.
@@ -223,7 +235,7 @@ Use `watch azart-cli getinfo` to check and wait until it's synced (look for bloc
    Leave the file open
 2. Go to "Tools" -> "Debug console"
 3. Run the following command: `masternode outputs`
-4. You should see output like the following if you have a transaction with exactly 1000 AZART:
+4. You should see output like the following if you have a transaction with exactly 10000 AZART:
 ```
 {
     "12345678xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "0"
