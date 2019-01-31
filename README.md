@@ -5,7 +5,7 @@ In this guide you will learn how to prepare a Azart Masternode in Ubuntu version
 This guide was done with the following environment:
 * Local: Windows 8.1 64 bit
 * Remote: Ubuntu 16.04 64 bit (fresh Ubuntu server without Azart already installed)
-* Azart Version: 0.12.3.4
+* Azart Version: 0.13.0.1
 
 ## Initial requirements
 
@@ -119,10 +119,10 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get -y
 
 ```
 cd /opt \
-    && wget https://github.com/azartpay/azart/releases/download/0.12.4.2/azart-0.12.4.2-linux-x64.tgz \
-    && tar -xvf azart-0.12.4.2-linux-x64.tgz \
-    && rm azart-0.12.4.2-linux-x64.tgz \
-    && cp azart-0.12.4.2-linux-x64/azart{d,-cli} /usr/local/bin \
+    && wget https://github.com/azartpay/azart/releases/download/0.13.0.1/azart-0.13.0.1-linux.tgz \
+    && tar -xvf azart-0.13.0.1-linux.tgz \
+    && rm azart-0.13.0.1-linux.tgz \
+    && cp azart-0.13.0.1-linux/azart{d,-cli} /usr/local/bin \
     && chmod -R 7777 /usr/local/bin/azart*
 ```
 
@@ -133,8 +133,11 @@ cd /root && mkdir -p .azartcore && nano .azartcore/azart.conf
 Replace:
 
 ```
-externalip=VPS_IP_ADDRESS
-masternodeprivkey=WALLET_GENKEY
+masternodeprivkey=PRIVATKEY
+externalip=VPSIPADDRESS
+rpcuser=RPPORT
+rpcuser=RPCUSER
+rpcpassword=RPCPASSWORD
 ```
 
 With your info!
@@ -148,26 +151,32 @@ masternodeprivkey=PRIVATKEY
 logtimestamps=1
 maxconnections=256
 externalip=VPSIPADDRESS
+rpcuser=RPPORT
 rpcuser=RPCUSER
 rpcpassword=RPCPASSWORD
 rpcallowip=127.0.0.1
-addnode=176.9.70.106:9799
-addnode=5.9.73.81:9799
-addnode=5.9.6.17:9799
-addnode=176.9.121.219:9799
-addnode=5.188.204.38:9799
-addnode=5.188.204.37:9799
-addnode=5.188.204.36:9799
-addnode=5.188.204.35:9799
-addnode=5.188.204.34:9799
-addnode=5.188.204.33:9799
-addnode=5.188.204.32:9799
-addnode=5.188.204.31:9799
-addnode=5.188.204.30:9799
-addnode=5.188.204.29:9799
-addnode=5.188.204.28:9799
-addnode=5.188.204.27:9799
-addnode=5.188.204.6:9799
+addnode=5.9.6.17:9779
+addnode=193.47.33.25:9779
+addnode=193.47.33.24:9779
+addnode=193.47.33.23:9779
+addnode=193.47.33.22:9779
+addnode=193.47.33.21:9779
+addnode=193.47.33.20:9779
+addnode=193.47.33.19:9779
+addnode=193.47.33.18:9779
+addnode=193.47.33.17:9779
+addnode=193.47.33.16:9779
+addnode=193.47.33.15:9779
+addnode=193.47.33.14:9779
+addnode=193.47.33.13:9779
+addnode=193.47.33.12:9779
+addnode=193.47.33.11:9779
+addnode=193.47.33.10:9779
+addnode=193.47.33.9:9779
+addnode=193.47.33.8:9779
+addnode=193.47.33.7:9779
+addnode=5.188.205.240:9779
+addnode=5.188.205.239:9779
 ```
 
 CTRL X to save it. Y for yes, then ENTER.
@@ -222,15 +231,15 @@ Hit 2. This will bring up an editor. Paste the following in it at the bottom.
 
 CTRL X to save it. Y for yes, then ENTER.
 
-Use `watch azart-cli getinfo` to check and wait until it's synced (look for blocks number and compare with a [block explorer](https://explorer.azartpay.com)).
+Use `watch azart-cli getinfo` to check and wait until it's synced (look for blocks number and compare with a [block explorer](https://chain.azartpay.com)).
 
 ## Cold Wallet Setup Part 2
 
 1. On your local machine open your `masternode.conf` file.
    Depending on your operating system you will find it in:
-   * Windows: `%APPDATA%\AzartCore\`
-   * Mac OS: `~/Library/Application Support/AzartCore/`
-   * Unix/Linux: `~/.azartcore/`
+   * Windows: `%APPDATA%\AzartPay\`
+   * Mac OS: `~/Library/Application Support/AzartPay/`
+   * Unix/Linux: `~/.azartpay/`
 
    Leave the file open
 2. Go to "Tools" -> "Debug console"
