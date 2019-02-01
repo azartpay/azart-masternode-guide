@@ -127,7 +127,7 @@ cd /opt \
 ```
 
 ```
-cd /root && mkdir -p .azartcore && nano .azartcore/azart.conf
+cd /root && mkdir -p .azartpay && nano .azartpay/azart.conf
 ```
 
 Replace:
@@ -199,8 +199,8 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/root/
-ExecStart=/usr/local/bin/azartd -conf=/root/.azartcore/azart.conf -datadir=/root/.azartcore
-ExecStop=/usr/local/bin/azart-cli -conf=/root/.azartcore/azart.conf -datadir=/root/.azartcore stop
+ExecStart=/usr/local/bin/azartd -conf=/root/.azartpay/azart.conf -datadir=/root/.azartpay
+ExecStop=/usr/local/bin/azart-cli -conf=/root/.azartpay/azart.conf -datadir=/root/.azartpay stop
 Restart=on-abort
 [Install]
 WantedBy=multi-user.target
